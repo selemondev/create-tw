@@ -22,8 +22,11 @@ export default async function installDependencies(input: UserInput) {
   const dependencies = input.dependencies
     .filter((d) => d.type === "prod")
     .map((d) => d.package);
+<<<<<<< HEAD
   
   const module = supportedNuxtModule.map((d) => d.package);
+=======
+>>>>>>> add-nuxt-support
 
   const twDependencies =
     input.appConfig.twDependencies?.map((d) => d.package) ?? [];
@@ -36,8 +39,12 @@ export default async function installDependencies(input: UserInput) {
     "autoprefixer",
     ...devDependencies,
     ...twDependencies,
+<<<<<<< HEAD
     ...twPlugins,
     ...module
+=======
+    ...twPlugins
+>>>>>>> add-nuxt-support
   ];
 
   const spinner = ora(`Installing dependencies`).start();
